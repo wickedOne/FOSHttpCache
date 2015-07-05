@@ -48,6 +48,7 @@ class VarnishProxy extends AbstractProxy
                 '-f', $this->getConfigFile(),
                 '-n', $this->getCacheDir(),
                 '-p', 'vcl_dir=' . $this->getConfigDir(),
+                '-S', realpath('./tests/Functional/Fixtures/secret'),
                 '-P', $this->pid,
             ]
         );
